@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #050505;
+  overscroll-behavior-y: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #252a31;
+  border-radius: 4px;
+}
+
+/* Frosted-glass panel used across feature / package / location cards */
+.glass {
+  background: rgba(11, 13, 16, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(37, 99, 255, 0.25);
+}
+
+.glow-text {
+  text-shadow: 0 0 30px rgba(22, 199, 255, 0.35);
+}
+
+.gtext {
+  background: linear-gradient(90deg, #2563ff, #8b5cf6, #16c7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section markers used by GSAP ScrollTrigger in Experience.tsx —
+   keep these ids stable, the 3D scene queries them by id. */
+#hero,
+#features,
+#location,
+#packages {
+  position: relative;
+}
+
+/* Smooth-scroll engine (Lenis) required rules */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* Active section highlight (set by ScrollFX via <html data-section>) */
+nav a[href^="#"] { position: relative; }
+html[data-section="hero"] nav a[href="#hero"]:not([data-dot]) { color: #fff; }
+html[data-section="hero"] [data-dot="hero"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="city"] [data-dot="city"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="advertise"] nav a[href="#advertise"]:not([data-dot]) { color: #fff; }
+html[data-section="advertise"] [data-dot="advertise"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="screen"] nav a[href="#screen"]:not([data-dot]) { color: #fff; }
+html[data-section="screen"] [data-dot="screen"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="location"] nav a[href="#location"]:not([data-dot]) { color: #fff; }
+html[data-section="location"] [data-dot="location"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="packages"] nav a[href="#packages"]:not([data-dot]) { color: #fff; }
+html[data-section="packages"] [data-dot="packages"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="how"] nav a[href="#how"]:not([data-dot]) { color: #fff; }
+html[data-section="how"] [data-dot="how"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="faq"] nav a[href="#faq"]:not([data-dot]) { color: #fff; }
+html[data-section="faq"] [data-dot="faq"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+html[data-section="contact"] nav a[href="#contact"]:not([data-dot]) { color: #fff; }
+html[data-section="contact"] [data-dot="contact"] { background: #16c7ff; border-color: #16c7ff; transform: scale(1.5); box-shadow: 0 0 12px rgba(22,199,255,.8); }
+
+@keyframes scrollcue {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(260%); }
+}
+.animate-scrollcue { animation: scrollcue 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-scrollcue { animation: none; }
+}
+
+/* Slide-in animations start off-screen; never let them create sideways scroll. */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* ---------- v2 additions ---------- */
+/* word-by-word headline mask */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.14em; margin-bottom: -0.14em; }
+.wi { display: inline-block; will-change: transform; }
+
+/* loading screen */
+@keyframes preload-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes preload-logo { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+.preload-bar { animation: preload-bar 1.6s cubic-bezier(.65,0,.35,1) forwards; }
+.preload-logo { animation: preload-logo 0.9s ease-out both; }
+
+/* scrolling category strip */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 32s linear infinite; }
+
+/* cursor ring */
+.cursor-ring { transition: width .25s, height .25s, background-color .25s, opacity .3s; mix-blend-mode: screen; }
+.cursor-ring[data-hot="1"] { width: 64px; height: 64px; background: rgba(22, 199, 255, 0.12); }
+
+/* background atmosphere behind / over the 3D canvas */
+.aurora {
+  background:
+    radial-gradient(60% 50% at 12% 8%, rgba(37, 99, 255, 0.22), transparent 70%),
+    radial-gradient(50% 45% at 92% 90%, rgba(139, 92, 246, 0.18), transparent 70%),
+    #050505;
+}
+.grain {
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .preload-bar, .preload-logo { animation: none; }
+  .preload-bar { transform: scaleX(1); }
+}

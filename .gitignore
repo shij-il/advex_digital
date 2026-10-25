@@ -1,0 +1,35 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Next.js build output
+.next
+out
+
+# secrets: never commit these (API keys live here)
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# deployment
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# testing
+coverage
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea
