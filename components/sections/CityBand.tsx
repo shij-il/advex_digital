@@ -84,7 +84,7 @@ export default function CityBand() {
           <p className="mb-2 text-xs font-semibold tracking-widest text-cy">EVERY GLANCE. EVERY DAY.</p>
           <h3 className="font-head text-2xl font-bold text-white sm:text-4xl">Your ad, in front of people already out and about.</h3>
           <p className="mt-3 text-sm text-muted sm:text-base">
-            Shopping, commuting, meeting friends — a bright LED screen catches attention at the exact moment people are looking up.
+            Shopping, commuting, meeting friends or grabbing a bite at foodcourt — a bright LED screen catches attention at the exact moment people are looking up.
           </p>
         </div>
       </div>

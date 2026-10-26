@@ -31,8 +31,8 @@ export default function Location() {
             Everything you need, right around you
           </h2>
           <p className="text-muted">
-            Our LED screen sits at Cravio, in the heart of Mannarkad — surrounded by schools,
-            shopping and the main highway, so your brand is seen by families, students and
+            Our LED screen sits at Cravio, in the heart of Mannarkad — surrounded by colleges,
+            shopping mall and the main highway, so your brand is seen by families, students and
             commuters every single day.
           </p>
 

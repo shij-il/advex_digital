@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef } from "react";
@@ -18,6 +19,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
       -y * 10
     }deg) translateY(-6px)`;
   }
+
   function reset() {
     if (cardRef.current) cardRef.current.style.transform = "";
   }
@@ -37,16 +39,27 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           MOST POPULAR
         </span>
       )}
+
       <p className="mt-2 font-head text-xl font-bold">{pkg.name}</p>
+
       <p className="mb-3 text-sm text-muted">{pkg.duration}</p>
+
+      <p className="mb-4 min-h-[2.5rem] text-sm leading-5 text-muted">
+        {pkg.description}
+      </p>
+
       <p className="gtext mb-4 text-3xl font-bold">
         <CountUp to={pkg.price} />
       </p>
+
       <ul className="mb-6 flex-1 space-y-2 text-sm text-muted">
         {pkg.features.map((f) => (
-          <li key={f}>✓ {f}</li>
+          <li key={f} className="whitespace-nowrap">
+            ✓ {f}
+          </li>
         ))}
       </ul>
+
       <a
         href={waLink(pkg)}
         target="_blank"
