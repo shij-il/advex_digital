@@ -12,7 +12,7 @@ export const PACKAGES: Package[] = [
   {
     name: "Opening",
     duration: "15 Days",
-    price: 7999,
+    price: 6999,
     description: "Launch your brand with focused visibility.",
     features: [
       "Focused Brand Visibility",
@@ -23,7 +23,7 @@ export const PACKAGES: Package[] = [
   {
     name: "Booster",
     duration: "30 Days",
-    price: 17999,
+    price: 12999,
     description: "Build consistent awareness throughout the month.",
     features: [
       "Consistent Brand Exposure",
@@ -35,7 +35,7 @@ export const PACKAGES: Package[] = [
   {
     name: "Season",
     duration: "90 Days",
-    price: 44999,
+    price: 36999,
     description: "Strengthen recognition with extended campaigns.",
     features: [
       "Extended Campaign Reach",
@@ -46,7 +46,7 @@ export const PACKAGES: Package[] = [
   {
     name: "Landmark",
     duration: "180 Days",
-    price: 74999,
+    price: 70999,
     description: "Establish a lasting presence in the market.",
     features: [
       "Strong Market Presence",
