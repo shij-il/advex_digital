@@ -12,7 +12,7 @@
 | 6 | Packages (`packages`) | Four plans: Opening, Booster, Season, Landmark. Desktop (1024px and wider): cards scroll sideways if they don't fit. Phone/tablet: cards rise in one by one. Prices count up. |
 | 7 | How It Works (`how`) | A line draws down the timeline and lights up each of the 6 steps as it reaches them. |
 | 8 | FAQ (`faq`) | Calm: heading, then questions rise in one by one. |
-| 9 | Contact (`contact`) | Headline words slide up; Quick Connect (WhatsApp, Call, Instagram) slides from the left, the message form from the right. Submitting shows "Sending…", then a thank-you message once the email has been sent. |
+| 9 | Contact (`contact`) | Headline words slide up; Quick Connect (WhatsApp, Call, Instagram) slides from the left, the message form from the right. Submitting shows "Sending…", then a thank-you message once Web3Forms has accepted the message. |
 
 Always on: smooth scrolling (Lenis), gradient progress bar at the top, side dots (desktop), nav highlight,
 soft cursor ring + magnetic buttons (desktop mouse only), Back-to-Top button, grain + glow background.
@@ -36,7 +36,7 @@ Some phones (for example iPhones in Low Power Mode) block autoplay until the vis
 - **Pinned scenes**: `CityBand.tsx` (zoom), `OurScreen.tsx` (4 steps), `Packages.tsx` (sideways cards).
   Change how long they stay pinned with the `end: "+=140%"` / `"+=260%"` values.
 - **Packages and prices**: `lib/packages.ts`.
-- **Contact cards, form and email**: `components/sections/Contact.tsx` and `app/api/contact/route.ts` (needs `.env.local`, see README).
+- **Contact cards and form**: `components/sections/Contact.tsx`. The form posts to Web3Forms and needs `NEXT_PUBLIC_WEB3FORMS_KEY` in `.env.local` (see README).
 - **Smooth-scroll feel**: `components/layout/SmoothScroll.tsx` (`duration`).
 - **Loading time**: `components/layout/Preloader.tsx` (1500 ms minimum).
 - People who have "reduce motion" turned on get no smooth scroll, no entrance animations, no pins, and a still poster instead of video.

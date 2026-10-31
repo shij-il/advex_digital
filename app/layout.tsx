@@ -1,7 +1,6 @@
-
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
-// @ts-expect-error Next.js loads global CSS at runtime; TypeScript may not have a declaration for it.
+// @ts-ignore -- Next.js processes this stylesheet import at build time.
 import "./globals.css";
 
 const head = Space_Grotesk({
@@ -17,7 +16,7 @@ const body = Inter({
 });
 
 const SITE_URL = "https://advexdigital.com";
-const TITLE = "Advex Digital — LED Advertising";
+const TITLE = "Advex Digital — LED Digital Advertising";
 const DESCRIPTION = "Advertise on a premium outdoor LED screen";
 
 export const metadata: Metadata = {

@@ -37,13 +37,27 @@ export default function Contact() {
     setStatus("sending");
     setErr("");
     try {
-      const r = await fetch("/api/contact", {
+      // Spam trap: real visitors never fill the hidden field.
+      if (form.hp) {
+        setStatus("sent");
+        return;
+      }
+      const r = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: "New enquiry from Advex Digital website",
+          from_name: "Advex Digital Website",
+          name: form.name,
+          phone: form.phone,
+          business: form.biz || "-",
+          message: form.msg,
+          botcheck: "",
+        }),
       });
       const d = await r.json().catch(() => ({}));
-      if (!r.ok || !d.ok) throw new Error(d.error || "Something went wrong.");
+      if (!r.ok || !d.success) throw new Error(d.message || "Something went wrong.");
       setStatus("sent");
       setForm({ name: "", phone: "", biz: "", msg: "", hp: "" });
     } catch (e) {

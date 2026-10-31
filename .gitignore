@@ -7,7 +7,7 @@ node_modules
 .next
 out
 
-# secrets: never commit these (API keys live here)
+# secrets and local settings: never commit these
 .env
 .env.*
 !.env.example
@@ -15,6 +15,7 @@ out
 
 # deployment
 .vercel
+.netlify
 
 # TypeScript
 *.tsbuildinfo
@@ -33,3 +34,4 @@ coverage
 .DS_Store
 Thumbs.db
 .idea
+.vscode

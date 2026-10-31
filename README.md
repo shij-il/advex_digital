@@ -1,39 +1,40 @@
 # Advex Digital: scroll-driven 3D LED billboard website
 
-Next.js 14 (App Router) · React Three Fiber · drei · GSAP ScrollTrigger · Lenis · Tailwind CSS
+Next.js (App Router) · React Three Fiber · drei · GSAP ScrollTrigger · Lenis · Tailwind CSS
 
 ## Run
 ```bash
 npm install
 npm run dev      # http://localhost:3000
 npm run build
-npm start
 ```
 
-## Contact form setup (Resend)
-The contact form posts to `app/api/contact/route.ts`, which emails each enquiry to you through [Resend](https://resend.com).
+## Contact form setup (Web3Forms)
+The contact form sends enquiries straight from the browser to [Web3Forms](https://web3forms.com), which emails them to you. No server code is needed.
 
-1. Create a Resend account with the email that should receive enquiries.
-2. In Resend, open **API Keys → Create API Key** (Sending access) and copy the key (starts with `re_`).
-3. In the project root (next to `package.json`) create `.env.local`:
+1. On web3forms.com, enter the email that should receive enquiries and copy the access key they send you.
+2. In the project root (next to `package.json`) create `.env.local`:
    ```
-   RESEND_API_KEY=re_your_key_here
-   CONTACT_TO=ads.advexdigital@gmail.com
-   # Optional, once you verify your own domain in Resend:
-   # CONTACT_FROM=Advex Website <contact@yourdomain.com>
+   NEXT_PUBLIC_WEB3FORMS_KEY=your_access_key_here
    ```
-4. Restart `npm run dev`. The file is only read when the server starts.
+3. Restart `npm run dev`. The file is only read when the server starts.
+4. On your host, add the same variable under Environment Variables, then rebuild. It is baked in at build time.
 
 Notes
-- Without a verified domain, Resend only delivers to the email you signed up with, and mail comes from `onboarding@resend.dev`. Create a Gmail filter (From: `onboarding@resend.dev` → Never send to Spam) so enquiries reach your inbox.
-- Spam protection: a hidden trap field plus a limit of 5 messages per visitor every 10 minutes.
+- The access key is public by design: it can only send email to your inbox.
+- The free plan allows 250 submissions a month. Turn on hCaptcha in the Web3Forms dashboard to keep spam from using it up.
+- Spam protection in the code: a hidden trap field that real visitors never fill.
+- If emails land in Spam, create a Gmail filter for the Web3Forms sender so they reach your inbox.
 - Never commit `.env.local`. It is already ignored by git.
 
-## Deploy (Vercel)
-1. Push the project to GitHub.
-2. Import the repository on [vercel.com](https://vercel.com); Next.js is detected automatically.
-3. Add `RESEND_API_KEY` and `CONTACT_TO` under **Settings → Environment Variables**, then deploy.
-4. Submit the contact form once on the live site to confirm the email arrives.
+## Deploy
+The site is built as plain static files, so it can be hosted almost anywhere (GitHub Pages, Cloudflare Pages, Netlify, Vercel, Hostinger).
+
+1. In `next.config.mjs`, set `output: "export"` and `images: { unoptimized: true }`.
+2. Run `npm run build`. The finished site is in the `out` folder.
+3. Upload the contents of `out` to your host (or connect the GitHub repository and set the build command to `npm run build` and the output folder to `out`).
+4. Add `NEXT_PUBLIC_WEB3FORMS_KEY` as an environment variable on the host before building.
+5. Submit the contact form once on the live site to confirm the email arrives.
 
 ## Sections (in order)
 Hero · Marquee · Advertising · City · Our Screen · Location · Packages · How It Works · FAQ · Contact · Footer
@@ -61,7 +62,6 @@ See `SCROLL-CHOREOGRAPHY.md` for what happens in every section and how to edit i
 | Brand, tagline, email, Instagram, Maps and venue links | `lib/site.ts` |
 | Hero headline | `components/sections/Hero.tsx` |
 | Contact cards and form | `components/sections/Contact.tsx` |
-| Email delivery | `app/api/contact/route.ts` |
 | Camera and billboard position per section | `lib/choreography.ts` |
 | Logo (navbar, footer, loader) | `public/logo.png` (transparent PNG) |
 | Location photo | `public/location.jpg` |
@@ -78,11 +78,6 @@ See `SCROLL-CHOREOGRAPHY.md` for what happens in every section and how to edit i
 Keep videos H.264, muted, with `faststart`, so they play on iPhones.
 
 ## Troubleshooting
-- **"Message service is not set up yet"**: `.env.local` is missing or the server was not restarted.
-- **No email arrives**: check Resend → Emails for the delivery status, then your Spam folder.
+- **Form shows an error**: `NEXT_PUBLIC_WEB3FORMS_KEY` is missing in `.env.local` or on your host, or the server was not restarted (or the site not rebuilt) after adding it.
+- **No email arrives**: check the Web3Forms dashboard, then your Spam folder. The free plan stops at 250 submissions a month.
 - **Video waits for a tap on a phone**: some phones (for example in Low Power Mode) block autoplay until the first touch. This is a phone restriction.
-
-## To do
-- Replace the city clip with local Mannarkad footage (1080p or higher) in `public/video/`
-- Verify your own domain in Resend so emails come from your own address
-- Optional: a GLTF billboard model
