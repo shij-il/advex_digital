@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="glass sticky top-[44vh] mx-auto w-full max-w-3xl rounded-3xl px-6 py-8 text-center sm:px-10 sm:py-12 lg:top-[18vh] lg:ml-[4vw] lg:mr-auto lg:max-w-xl lg:text-left">
         <span data-hero-in className="mb-6 inline-flex items-center gap-2 rounded-full border border-bd bg-black/40 px-3 py-1.5 text-xs">
           <span className="h-2 w-2 animate-pulse rounded-full bg-cy" />
-          LIVE SCREEN — Cravio, Mannarkad
+          LIVE LED SCREEN — Cravio Food Court, Mannarkad
         </span>
         <Words
           as="h1"
@@ -23,7 +23,7 @@ export default function Hero() {
           className="glow-text font-head text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl xl:text-7xl"
         />
         <p data-hero-in className="mx-auto mt-6 max-w-md text-base text-muted sm:text-lg lg:mx-0">
-          Advex Digital puts your business on a premium outdoor LED screen — seen by
+          Advex Digital puts your business on a premium outdoor LED screen in Mannarkad — seen by
           thousands, every single day.
         </p>
         <div data-hero-in className="mt-7 flex flex-wrap items-center justify-center gap-3 lg:justify-start">

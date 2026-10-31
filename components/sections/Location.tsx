@@ -21,7 +21,7 @@ export default function Location() {
             className="h-full w-full object-cover object-[72%_50%]"
           />
           <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-4 text-sm text-white">
-            <span className="font-semibold">{VENUE}</span>, Mannarkad — our screen location
+            <span className="font-semibold">{VENUE}</span>, Mannarkkad — our screen location
           </figcaption>
         </figure>
 
@@ -31,7 +31,7 @@ export default function Location() {
             Everything you need, right around you
           </h2>
           <p className="text-muted">
-            Our LED screen sits at Cravio, in the heart of Mannarkad — surrounded by colleges,
+            Our LED screen sits at Cravio Food Court, in the heart of Mannarkkad — surrounded by colleges,
             shopping mall and the main highway, so your brand is seen by families, students and
             commuters every single day.
           </p>

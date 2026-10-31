@@ -16,14 +16,36 @@ const body = Inter({
 });
 
 const SITE_URL = "https://advexdigital.com";
-const TITLE = "Advex Digital — LED Digital Advertising";
-const DESCRIPTION = "Advertise on a premium outdoor LED screen";
+const TITLE = "Advex Digital | LED Advertising in Mannarkad, Kerala";
+const DESCRIPTION =
+  "Advex Digital offers outdoor LED screen advertising in Cravio, Mannarkad (Mannarkkad), Kerala. Promote your shop, brand or event on a premium portrait LED display at Cravio Food Court.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
   applicationName: "Advex Digital",
+  keywords: [
+    "Advex Digital",
+    "Advex Digital Mannarkkad",
+    "Advex LED advertising",
+    "LED advertising in Mannarkad",
+    "LED advertising in Mannarkkad",
+    "advertising in Mannarkad",
+    "advertising in Mannarkkad",
+    "outdoor advertising Mannarkkad",
+    "digital billboard Mannarkkad",
+    "LED screen advertising Mannarkkad",
+    "LED display advertising Palakkad",
+    "shop advertising Mannarkkad",
+    "advertise your business in Mannarkkad",
+    "Cravio Food Court Mannarkkad",
+    "Cravio Food Court Mannarkad",
+    "LED screen at Cravio Food Court",
+    "LED advertising at Cravio Food Court",
+    "advertise at Cravio Mannarkkad",
+    "birthday and event ad screen Mannarkkad",
+  ],
 
   alternates: {
     canonical: "/",
@@ -31,14 +53,8 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      {
-        url: "/icon-dark.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon-light.png",
-        media: "(prefers-color-scheme: light)",
-      },
+      { url: "/icon-dark.png", media: "(prefers-color-scheme: dark)" },
+      { url: "/icon-light.png", media: "(prefers-color-scheme: light)" },
     ],
   },
 
@@ -69,6 +85,27 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Advex Digital",
+  description: DESCRIPTION,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/opengraph-image.png`,
+  telephone: "+919207674546",
+  email: "ads.advexdigital@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Cravio Food Court",
+    addressLocality: "Mannarkkad",
+    addressRegion: "Kerala",
+    addressCountry: "IN",
+  },
+  areaServed: ["Mannarkkad", "Palakkad", "Kerala"],
+  sameAs: ["https://www.instagram.com/advex_digital"],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -77,6 +114,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${head.variable} ${body.variable}`}>
       <body className="bg-bg font-body text-white antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

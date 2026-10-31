@@ -30,7 +30,7 @@ const FEATURES = [
   {
     title: "High Footfall",
     desc: "Positioned where your audience already is.",
-    long: "At Cravio in the heart of Mannarkad — close to colleges, shopping mall and the highway.",
+    long: "At Cravio Food Court in the heart of Mannarkad — close to colleges, shopping mall and the highway.",
     icon: <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" strokeWidth={2} stroke="currentColor" fill="none" />,
   },
 ];
