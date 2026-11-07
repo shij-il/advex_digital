@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Montserrat, Playfair_Display, DM_Serif_Display } from "next/font/google";
 // @ts-ignore -- Next.js processes this stylesheet import at build time.
 import "./globals.css";
 
@@ -13,6 +13,29 @@ const body = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-body",
+});
+
+// Tagline: small spaced first line
+const tag = Montserrat({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-tag",
+});
+
+// Tagline: "BRAND TAKES" line (also the footer tagline in italic)
+const display = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["700"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+});
+
+// Tagline: "The Spotlight." line
+const spot = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic"],
+  variable: "--font-spot",
 });
 
 const SITE_URL = "https://advexdigital.com";
@@ -93,7 +116,7 @@ const jsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/opengraph-image.png`,
-  telephone: "+919207674546",
+  telephone: "+917907758595",
   email: "ads.advexdigital@gmail.com",
   address: {
     "@type": "PostalAddress",
@@ -112,7 +135,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${head.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      className={`${head.variable} ${body.variable} ${tag.variable} ${display.variable} ${spot.variable}`}
+    >
       <body className="bg-bg font-body text-white antialiased">
         <script
           type="application/ld+json"

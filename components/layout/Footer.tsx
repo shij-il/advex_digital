@@ -10,7 +10,7 @@ export default function Footer() {
             <img src="/logo.png" alt={BRAND} className="h-8 w-auto rounded" />
             <p className="font-head text-base font-bold tracking-[0.25em] text-white">ADVEX DIGITAL</p>
           </div>
-          <p className="mt-2 max-w-xs text-xs text-muted">{TAGLINE}</p>
+          <p className="mt-2 max-w-xs font-display text-sm font-bold italic tracking-wide text-muted">{TAGLINE}</p>
         </div>
         <div className="space-y-1 text-xs">
           <p className="text-[10px] font-bold tracking-widest text-cy">ENQUIRIES</p>

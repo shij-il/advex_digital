@@ -18,9 +18,14 @@ export default function Hero() {
         <Words
           as="h1"
           hero
-          text={"WHERE YOUR\nBRAND TAKES\nTHE SPOTLIGHT."}
-          accent="THE SPOTLIGHT."
-          className="glow-text font-head text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl xl:text-7xl"
+          text={"WHERE YOUR\nBRAND TAKES\nThe Spotlight."}
+          accent="The Spotlight."
+          lineClasses={[
+            "mb-2 font-tag text-[0.38em] font-medium tracking-[0.38em]",
+            "font-display font-bold",
+            "font-spot text-[1.12em] font-normal italic leading-[1.05]",
+          ]}
+          className="glow-text whitespace-nowrap text-[1.7rem] leading-[1.12] tracking-tight text-white sm:text-5xl"
         />
         <p data-hero-in className="mx-auto mt-6 max-w-md text-base text-muted sm:text-lg lg:mx-0">
           Advex Digital puts your business on a premium outdoor LED screen in Mannarkad — seen by

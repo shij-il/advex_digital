@@ -16,6 +16,9 @@ const config: Config = {
       fontFamily: {
         head: ["var(--font-head)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
+        tag: ["var(--font-tag)", "sans-serif"],
+        display: ["var(--font-display)", "serif"],
+        spot: ["var(--font-spot)", "serif"],
       },
       backdropBlur: { xs: "2px" },
     },

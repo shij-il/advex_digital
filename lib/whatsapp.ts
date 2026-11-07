@@ -1,7 +1,7 @@
 import type { Package } from "./packages";
 
 // TODO: replace with your real business number (country code, no + or leading 0)
-export const PHONE = "919207674546";
+export const PHONE = "917907758595";
 export const LOCATION = "Cravio, Mannarkad";
 
 export function waLink(pkg?: Package): string {
