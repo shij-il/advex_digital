@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, Montserrat, Playfair_Display, DM_Serif_Display } from "next/font/google";
 // @ts-ignore -- Next.js processes this stylesheet import at build time.
@@ -140,6 +141,18 @@ export default function RootLayout({
       className={`${head.variable} ${body.variable} ${tag.variable} ${display.variable} ${spot.variable}`}
     >
       <body className="bg-bg font-body text-white antialiased">
+        {/* Google tag (Analytics / Tag Manager) */}
+        <Script
+          id="gtm-src"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-PV6PZKXP"
+          strategy="afterInteractive"
+        />
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());`}
+        </Script>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
