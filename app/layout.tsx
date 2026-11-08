@@ -49,26 +49,74 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   applicationName: "Advex Digital",
+  
   keywords: [
+    // Brand keywords
     "Advex Digital",
     "Advex Digital Mannarkkad",
-    "Advex LED advertising",
-    "LED advertising in Mannarkad",
-    "LED advertising in Mannarkkad",
-    "advertising in Mannarkad",
-    "advertising in Mannarkkad",
+    "Advex Digital Kerala",
+
+    // Primary service keywords
+    "LED advertising",
+    "LED advertising agency",
+    "digital advertising",
+    "digital advertising agency",
+    "outdoor LED advertising",
+    "outdoor advertising agency",
+    "digital billboard advertising",
+    "LED screen advertising",
+    "digital display advertising",
+    "LED display advertising",
+    "advertising screen rental",
+    "business advertising",
+    "brand promotion",
+    "video advertising",
+
+    // Location-based keywords
+    "LED advertising Mannarkkad",
+    "LED advertising Mannarkad",
+    "LED advertising agency Mannarkkad",
+    "digital advertising Mannarkkad",
+    "advertising agency Mannarkkad",
     "outdoor advertising Mannarkkad",
     "digital billboard Mannarkkad",
     "LED screen advertising Mannarkkad",
-    "LED display advertising Palakkad",
-    "shop advertising Mannarkkad",
-    "advertise your business in Mannarkkad",
+    "advertising in Mannarkkad",
+    "advertising in Mannarkad",
+    "business promotion Mannarkkad",
+    "LED advertising Palakkad",
+    "digital advertising Palakkad",
+    "outdoor advertising Kerala",
+
+    // Location and venue keywords
     "Cravio Food Court Mannarkkad",
     "Cravio Food Court Mannarkad",
     "LED screen at Cravio Food Court",
     "LED advertising at Cravio Food Court",
     "advertise at Cravio Mannarkkad",
-    "birthday and event ad screen Mannarkkad",
+
+    // Business and event keywords
+    "shop advertising Mannarkkad",
+    "brand advertising Mannarkkad",
+    "new business promotion Mannarkkad",
+    "product promotion Mannarkkad",
+    "event advertising Mannarkkad",
+    "birthday advertising Mannarkkad",
+    "local business advertising Kerala",
+
+    // Malayalam keywords
+    "മണ്ണാർക്കാട് പരസ്യം",
+    "മണ്ണാർക്കാട് എൽഇഡി പരസ്യം",
+    "മണ്ണാർക്കാട് ഡിജിറ്റൽ പരസ്യം",
+    "മണ്ണാർക്കാട് പരസ്യ ഏജൻസി",
+    "എൽഇഡി പരസ്യ ഏജൻസി",
+    "ഡിജിറ്റൽ പരസ്യ ഏജൻസി",
+    "പാലക്കാട് പരസ്യം",
+    "പാലക്കാട് എൽഇഡി പരസ്യം",
+    "ബിസിനസ് പരസ്യം",
+    "കട പരസ്യം",
+    "ബ്രാൻഡ് പ്രമോഷൻ",
+    "ക്രാവിയോ ഫുഡ് കോർട്ട്",
   ],
 
   alternates: {
