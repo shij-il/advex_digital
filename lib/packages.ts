@@ -1,4 +1,3 @@
-
 export type Package = {
   name: string;
   duration: string;
@@ -6,6 +5,8 @@ export type Package = {
   description: string;
   features: string[];
   popular?: boolean;
+  audience?: string; // small tag shown on the card, e.g. "For newly opening businesses"
+  note?: string;     // eligibility line shown under the description
 };
 
 export const PACKAGES: Package[] = [
@@ -13,12 +14,14 @@ export const PACKAGES: Package[] = [
     name: "Opening",
     duration: "15 Days",
     price: 6999,
-    description: "Launch your brand with focused visibility.",
+    description: "Announce your grand opening to the crowd at Cravio.",
     features: [
-      "Focused Brand Visibility",
+      "Grand-Opening Promo",
       "Quick Brand Awareness",
       "Standard Ad Rotation",
     ],
+    audience: "For newly opening businesses",
+    note: "Meant for newly opening firms.",
   },
   {
     name: "Booster",

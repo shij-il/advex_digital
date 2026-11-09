@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRef } from "react";
@@ -40,6 +39,12 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
         </span>
       )}
 
+      {pkg.audience && !pkg.popular && (
+        <span className="absolute -top-3 left-6 whitespace-nowrap rounded-full bg-[#8B5CF6] px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
+          {pkg.audience}
+        </span>
+      )}
+
       <p className="mt-2 font-head text-xl font-bold">{pkg.name}</p>
 
       <p className="mb-3 text-sm text-muted">{pkg.duration}</p>
@@ -54,11 +59,17 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
 
       <ul className="mb-6 flex-1 space-y-2 text-sm text-muted">
         {pkg.features.map((f) => (
-          <li key={f} className="whitespace-nowrap">
+          <li key={f}>
             ✓ {f}
           </li>
         ))}
       </ul>
+
+      {pkg.note && (
+        <p className="mb-4 rounded-xl border border-[#8B5CF6]/40 bg-[#8B5CF6]/10 px-3 py-2 text-xs leading-5 text-white/80">
+          {pkg.note}
+        </p>
+      )}
 
       <a
         href={waLink(pkg)}
