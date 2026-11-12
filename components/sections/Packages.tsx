@@ -63,6 +63,10 @@ export default function Packages() {
         ))}
       </div>
 
+      <p className="mx-auto mt-6 w-full max-w-md text-center text-xs leading-5 text-muted sm:max-w-3xl lg:max-w-6xl">
+        * All package prices are exclusive of GST. 18% GST is applicable on every package.
+      </p>
+
       {/* Events & functions: below the four cards, after them on phones */}
       <div className="mx-auto mt-10 w-full max-w-md sm:max-w-3xl lg:max-w-6xl">
         <EventsCard />
