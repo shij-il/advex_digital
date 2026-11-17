@@ -42,14 +42,23 @@ const spot = DM_Serif_Display({
 const SITE_URL = "https://advexdigital.com";
 const TITLE = "Advex Digital | LED Screen Advertising in Mannarkad, Kerala";
 const DESCRIPTION =
-  "Advex Digital offers outdoor LED screen advertising in Cravio, Mannarkad (Mannarkkad), Kerala. Promote your shop, brand or event on a premium portrait LED display at Cravio Food Court.";
+  "Advex Digital offers outdoor LED screen advertising in Cravio, Mannarkkad, Kerala. Promote your shop, brand or event on a premium portrait LED display.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
   applicationName: "Advex Digital",
-  
+
+  icons: {
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+
   keywords: [
     // Brand keywords
     "Advex Digital",

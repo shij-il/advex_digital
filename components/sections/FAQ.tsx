@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const FAQS = [
-  { q: "How much does a campaign cost?", a: "Packages start at ₹7,999 for 15 days. See the Packages section above for full pricing." },
+  { q: "How much does a campaign cost?", a: "Packages start at ₹6,999 for 15 days. See the Packages section above for full pricing." },
   { q: "What creative formats are accepted?", a: "High-resolution images and video files, sized to our screen's aspect ratio. We'll guide you after booking." },
   { q: "How long can a campaign run?", a: "From 15 days up to 180 days, renewable at the end of each term." },
   { q: "How do I book a slot?", a: "Choose a package, confirm availability and payment with our team on WhatsApp, then submit your creative." },
